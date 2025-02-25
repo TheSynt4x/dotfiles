@@ -11,32 +11,32 @@
   services.mysql = {
     enable = true;
     package = pkgs.mysql80;
+
+    # Specify the MySQL configuration settings
+    settings = {
+      mysqld = {
+        bind-address = "0.0.0.0";  # Allow external connections
+        port = 3306;  # MySQL default port
+        default-time-zone = "+00:00";  # Set timezone to UTC (change if needed)
+        transaction-isolation = "READ-COMMITTED";  # Set transaction isolation level
+      };
+    };
   };
 
   # Install system-wide development tools
   environment.systemPackages = with pkgs; [
-    zsh
     git
     code-cursor
     docker-compose
     fnm
     dbeaver-bin
+    lz4
+    pv
+    htop
   ];
-
-  programs.zsh = {
-	enable = true;
-	ohMyZsh = {
-		enable = true;
-		theme="amuse";
-		plugins=["git" "docker"];
-	};
-	autosuggestions={
-		enable = true;
-	};
-  };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-	fnm
+    fnm
   ];
 }
