@@ -1,9 +1,13 @@
+[Custom Commands][net.local.konsole-2.desktop]
+Exec=konsole --profile normal
+Name=normal
+
 [Custom Commands][net.local.konsole.desktop]
-Exec=konsole --layout /home/null/layout.json
+Exec=konsole --layout /home/null/layout.json --profile dev
 Name=dev
 
 [Custom Commands][net.local.spectacle.desktop]
-Exec=spectacle -brc
+Exec=sh -c 'spectacle -brc'
 Name=spectacle
 
 [KDE Keyboard Layout Switcher][Global Shortcuts]
@@ -161,11 +165,14 @@ Window to Screen 5=
 Window to Screen 6=
 Window to Screen 7=
 view_actual_size=Meta+0
-view_zoom_in=Meta++; Meta+=
+view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
+
+[net.local.konsole-2.desktop][Global Shortcuts]
+_launch=Ctrl+Alt+T
 
 [net.local.konsole.desktop][Global Shortcuts]
 _launch=Ctrl+Alt+D
 
 [net.local.spectacle.desktop][Global Shortcuts]
-_launch=
+_launch=Print
