@@ -3,6 +3,7 @@
 {
 	environment.systemPackages = with pkgs; [
 		zsh
+		fastfetch
 	];
 
 	programs.zsh = {

@@ -3,6 +3,14 @@
 {
   # Enable Docker
   virtualisation.docker.enable = true;
+  networking.firewall = {
+      enable = true;
+      extraCommands = ''
+        iptables -I INPUT 1 -s 172.16.0.0/12 -p tcp -d 172.17.0.1 -j ACCEPT
+        iptables -I INPUT 2 -s 172.16.0.0/12 -p udp -d 172.17.0.1 -j ACCEPT
+      '';
+    };
+
 
   # Allow your user to use Docker without sudo
   users.users.null.extraGroups = [ "docker" ];
@@ -39,4 +47,6 @@
   programs.nix-ld.libraries = with pkgs; [
     fnm
   ];
+  
+  services.envfs.enable = true;
 }
