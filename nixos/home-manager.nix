@@ -48,11 +48,6 @@ in
           "Window to Desktop 4" = "Ctrl+Alt+4";
         };
         
-        "services/net.local.konsole-2.desktop"."_launch" = "Ctrl+Alt+T";
-        "services/net.local.konsole.desktop"."_launch" = "Ctrl+Alt+D";
-        "services/net.local.spectacle.desktop"."_launch" = "Print";
-        "services/org.kde.konsole.desktop"."_launch" = [ ];
-        "services/org.kde.spectacle.desktop"."_launch" = "Meta+Shift+S";
         "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Alt+Shift";
       };
 
