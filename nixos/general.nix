@@ -8,5 +8,6 @@
 		vlc
 		p7zip
 		ffmpeg
+		zip
 	];
 }
