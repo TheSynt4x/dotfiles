@@ -6,9 +6,6 @@
 		slack
 		google-chrome
 		vlc
-		p7zip
 		ffmpeg
-		zip
-		fastfetch
 	];
 }

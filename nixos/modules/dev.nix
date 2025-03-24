@@ -42,6 +42,9 @@
     pv
     htop
     zsh
+    p7zip
+    zip
+    fastfetch
   ];
 
   programs.nix-ld.enable = true;
