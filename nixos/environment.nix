@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   userConfig = {
@@ -9,9 +9,9 @@ let
 in
 {
   imports = [
-    (import ./desktop.nix { inherit userConfig; })
-    (import ./modules/dev.nix { inherit userConfig; })
-    (import ./modules/general.nix { inherit userConfig; })
+    (import ./desktop.nix { inherit config pkgs lib userConfig; })
+    (import ./modules/dev.nix { inherit config pkgs userConfig; })
+    (import ./modules/general.nix { inherit config pkgs userConfig; })
   ];
 
   # User configuration
@@ -35,4 +35,4 @@ in
 
   # System-wide settings
   i18n.defaultLocale = userConfig.defaultLocale;
-} 
+}
