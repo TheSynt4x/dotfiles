@@ -154,7 +154,7 @@ in
         "$mainMod, M, exit"
         "$mainMod, E, exec, dolphin"
         "$mainMod, V, togglefloating"
-        "$mainMod, , exec, wofi --show drun"
+        "$mainMod, R, exec, wofi --show drun"
         ", Print, exec, grimblast copy area"
         
         # Workspace switching
