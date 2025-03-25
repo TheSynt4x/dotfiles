@@ -8,4 +8,8 @@
 		vlc
 		ffmpeg
 	];
+	
+	fonts.packages = with pkgs; [
+		nerdfonts
+	];
 }

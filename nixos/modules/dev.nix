@@ -45,6 +45,11 @@
     p7zip
     zip
     fastfetch
+    
+    # debug x270
+    msr-tools
+    i7z
+    stress
   ];
 
   programs.nix-ld.enable = true;
