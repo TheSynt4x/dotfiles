@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userConfig, ... }:
 
 {
   # Enable Docker
@@ -13,7 +13,7 @@
 
 
   # Allow your user to use Docker without sudo
-  users.users.null.extraGroups = [ "docker" ];
+  users.users.${userConfig.username}.extraGroups = [ "docker" ];
 
   # Enable MySQL 8.0.41
   services.mysql = {
@@ -41,6 +41,10 @@
     lz4
     pv
     htop
+    zsh
+    p7zip
+    zip
+    fastfetch
   ];
 
   programs.nix-ld.enable = true;

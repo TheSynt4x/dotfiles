@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, userConfig, ... }:
 
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz";
@@ -10,8 +10,8 @@ in
       (import "${home-manager}/nixos")
     ];
 
-  users.users.null.isNormalUser = true;
-  home-manager.users.null = { pkgs, ... }: {
+  users.users.${userConfig.username}.isNormalUser = true;
+  home-manager.users.${userConfig.username} = { pkgs, ... }: {
     imports = [ "${plasma-manager}/modules" ];
 
     home.stateVersion = "24.11";
