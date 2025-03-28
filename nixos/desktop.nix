@@ -33,6 +33,7 @@ in
   ];
 
   services.power-profiles-daemon.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   programs.hyprland.enable = true;
 
