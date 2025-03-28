@@ -1,0 +1,224 @@
+/* Base Colors */
+@define-color bg_main rgba(25, 25, 25, 0.65);
+@define-color bg_main_tooltip rgba(0, 0, 0, 0.7);
+@define-color bg_hover rgba(200, 200, 200, 0.5);
+@define-color bg_active rgba(100, 100, 100, 0.3);
+@define-color border_main rgba(255, 255, 255, 0.2);
+@define-color content_main white;
+@define-color content_inactive rgba(255, 255, 255, 0.25);
+@define-color warning_color rgba(255, 200, 0, 0.9);  /* Yellow warning color */
+
+/* Grouping Variables */
+@define-color floating_bg rgba(255, 255, 255, 0.2);
+@define-color floating_border rgba(255, 255, 255, 0.15);
+@define-color hover_bg @bg_hover;
+@define-color active_bg @bg_active;
+@define-color inactive_color @content_inactive;
+@define-color main_color @content_main;
+@define-color focus_color @bg_active;
+
+/* Global Styles */
+* {
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    font-family: "Segoe UI", "Ubuntu";
+    font-weight: 600;
+    font-size: 12px;  /* Reduced font size */
+    margin: 0;
+    padding: 0;
+}
+
+/* Waybar Window */
+window#waybar {
+    background: transparent;
+    color: @content_main;
+}
+
+/* Tooltip */
+tooltip {
+    background: @bg_main_tooltip;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @border_main;
+}
+
+tooltip label {
+    color: @content_main;
+}
+
+/* Custom OS Button */
+#custom-os_button {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 20px; /* Reduced font size */
+    padding-left: 10px;  /* Reduced padding */
+    padding-right: 15px; /* Reduced padding */
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#custom-os_button:hover {
+    background: @hover_bg;
+    color: @content_main;
+}
+
+/* Workspaces Styling to Match Floating Islands */
+#workspaces button {
+    margin: 3px;
+    background: @floating_bg;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid @floating_border;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding-left: 2px;
+    padding-right: 2px;
+   
+}
+
+#workspaces button:hover {
+    background: @hover_bg;
+}
+
+#workspaces button.active {
+    background: @active_bg;
+    border-bottom: 3px solid white;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 43, 51, 0.85);
+}
+
+
+/* Taskbar Floating Island (Now as a single floating island without nesting) */
+#taskbar {
+    margin: 3px; /* Reduced margin */
+    padding: 4px; /* Reduced padding */
+    border-radius: 10px;
+}
+
+#taskbar button {
+    min-width: 100px;  /* Reduced width */
+    padding: 6px;  /* Reduced padding */
+    margin: 3px;  /* Reduced margin */
+    color: white;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#taskbar button.active {
+    border-bottom: 3px solid white;
+    background: @active_bg;
+}
+
+#taskbar button:hover {
+    background: @hover_bg;
+    color: @main_color;
+}
+
+/* CPU, Disk, Memory Floating Island */
+#cpu, #disk, #memory {
+    padding: 4px;  /* Reduced padding */
+    margin: 3px;   /* Reduced margin */
+    background: @floating_bg;
+    border-radius: 10px;
+    border: 1px solid @floating_border;
+}
+
+/* Temperature Critical Styling */
+#temperature {
+    color: transparent;
+    font-size: 0px;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#temperature.critical {
+    padding-right: 3px;
+    color: @warning_color;
+    font-size: initial;
+    border-bottom: 3px dashed @warning_color;
+}
+
+/* Tray Floating Island */
+#tray {
+    margin-left: 3px;
+    margin-right: 3px;  /* Reduced margin */
+}
+
+#tray > .passive {
+    border-bottom: none;
+}
+
+#tray > .active {
+    border-bottom: 3px solid white;
+}
+
+#tray > .needs-attention {
+    border-bottom: 3px solid @warning_color;
+}
+
+#tray > widget {
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#tray > widget:hover {
+    background: @hover_bg;
+}
+
+/* Pulseaudio Floating Island */
+#pulseaudio {
+    font-family: "JetBrainsMono Nerd Font";
+    padding-left: 3px;  /* Reduced padding */
+    padding-right: 3px;  /* Reduced padding */
+    background: @floating_bg;
+    border-radius: 10px;
+    border: 1px solid @floating_border;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#pulseaudio:hover {
+    background: @hover_bg;
+}
+
+/* Network, Battery, Pulseaudio Floating Island */
+#network, #battery, #pulseaudio {
+    padding-left: 3px;  /* Reduced padding */
+    padding-right: 3px;  /* Reduced padding */
+    margin: 3px;  /* Reduced margin */
+    background: @floating_bg;
+    border-radius: 10px;
+    border: 1px solid @floating_border;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#network:hover, #battery:hover, #pulseaudio:hover {
+    background: @hover_bg;
+}
+
+/* Clock Floating Island */
+#clock {
+    margin: 3px;  /* Reduced margin */
+    padding: 4px;  /* Reduced padding */
+    background: @floating_bg;
+    border-radius: 10px;
+    border: 1px solid @floating_border;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#clock:hover {
+    background: @hover_bg;
+}
+
+/* Shared Floating Island Styling */
+#network, #battery, #pulseaudio, #clock {
+    margin: 3px;
+    padding: 4px;  /* Reduced padding */
+    background: @floating_bg;
+    border-radius: 10px;
+    border: 1px solid @floating_border;
+}
+
+#network:hover, #battery:hover, #pulseaudio:hover {
+    background: @hover_bg;
+}

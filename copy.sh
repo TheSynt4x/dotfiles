@@ -1,17 +1,8 @@
-#!/bin/bash
+tar --exclude='nixos/configuration.nix' \
+    --exclude='nixos/hardware-configuration.nix' \
+    -czf ~/dotfiles/nixos.tar.gz -C /etc nixos
 
-# Script to copy NixOS config files to dotfiles repo
-# Excludes configuration.nix and hardware-configuration.nix
+tar -xzf ~/dotfiles/nixos.tar.gz -C ~/dotfiles/
 
-echo "Copying NixOS config files to dotfiles repo..."
-
-# Create the target directory if it doesn't exist
-mkdir -p ~/dotfiles/nixos
-
-# Copy all files from /etc/nixos to ~/dotfiles/nixos except the excluded ones
-find /etc/nixos -type f \
-  ! -name "configuration.nix" \
-  ! -name "hardware-configuration.nix" \
-  -exec cp {} ~/dotfiles/nixos/ \;
-
-echo "Done! NixOS config files copied to ~/dotfiles/nixos"
+# remove the tar.gz file
+rm ~/dotfiles/nixos.tar.gz
