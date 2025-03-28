@@ -6,3 +6,7 @@ tar -xzf ~/dotfiles/nixos.tar.gz -C ~/dotfiles/
 
 # remove the tar.gz file
 rm ~/dotfiles/nixos.tar.gz
+
+cp -r ~/.config/waybar ~/dotfiles/wayland
+
+cp -r ~/.config/wofi ~/dotfiles/wayland

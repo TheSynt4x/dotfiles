@@ -2,6 +2,8 @@
 
 # Script to apply dotfiles to NixOS and rebuild the system
 
+sudo cp -r ~/dotfiles/wayland/* ~/.config
+
 echo "Applying NixOS configuration from dotfiles..."
 
 # Navigate to dotfiles directory
