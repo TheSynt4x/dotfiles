@@ -12,7 +12,6 @@ in
     (import ./desktop.nix { inherit config pkgs lib userConfig; })
     (import ./modules/dev.nix { inherit config pkgs userConfig; })
     (import ./modules/general.nix { inherit config pkgs userConfig; })
-    # (import ./modules/disable-bdprochot.nix { inherit config pkgs; })
   ];
 
   # User configuration
