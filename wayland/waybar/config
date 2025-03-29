@@ -18,26 +18,13 @@
       "pulseaudio/slider",
       "hyprland/language",
       "clock",
-      "power-profiles-daemon"
     ],
     "hyprland/window": {
-      "format": "<span rise='1500'>{}</span>",
-      "max-length": 35,
+      "max-length": 40,
       "rewrite": {
         "": "Babaji"
       },
       "separate-outputs": true
-    },
-    "power-profiles-daemon": {
-      "format": "<span rise='1500'>{icon}</span>",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": " ",
-        "power-saver": " "
-      }
     },
     "hyprland/workspaces": {
       "icon-size": 32,
@@ -91,7 +78,8 @@
     "pulseaudio/slider": {
       "min": 0,
       "max": 100,
-      "orientation": "horizontal"
+      "orientation": "horizontal",
+	  "on-right-click": "pavucontrol"
     },
 	"hyprland/language": {
 		"format": "{}",	
@@ -102,7 +90,7 @@
       "format": "<span rise='1500'>{:%R | %d.%m.%Y}</span>",
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
-        "mode": "year",
+        "mode": "month",
         "mode-mon-col": 3,
         "weeks-pos": "right",
         "on-scroll": 1,

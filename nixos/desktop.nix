@@ -27,12 +27,36 @@ in
     xdg-desktop-portal-hyprland # Ensure proper integration with applications
     dunst
     wl-clipboard
-    nwg-displays
-    nwg-panel
     micro
+    pavucontrol
   ];
+  
+  services.tlp = {
+    enable = true;
 
-  services.power-profiles-daemon.enable = true;
+    settings = {
+      # Common settings
+      START_CHARGE_THRESH_BAT0 = 20;
+      STOP_CHARGE_THRESH_BAT0 = 100;
+
+      # CPU scaling governor
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      #Disk I/O scheduler
+      DISK_IOSCHED_ON_AC = "cfq";
+      DISK_IOSCHED_ON_BAT = "deadline";
+
+      # Wi-Fi power saving
+      WIFI_PWR_ON_AC = "on";
+      WIFI_PWR_ON_BAT = "on";
+
+      # USB autosuspend
+      USB_AUTOSUSPEND_ON_AC = 0;
+      USB_AUTOSUSPEND_ON_BAT = 1;
+    };
+  };
+
   services.xserver.excludePackages = [ pkgs.xterm ];
 
   programs.hyprland.enable = true;
@@ -241,10 +265,10 @@ in
 
           # Workspace rules
           workspace = [
-            "1, on-created-empty:[floating] google-chrome-stable --profile-directory=\"Default\""
-            "2, on-created-empty:[floating] google-chrome-stable --profile-directory=\"Profile 1\""
-            "3, on-created-empty:[floating] dbeaver"
-            "4, on-created-empty:[float] cursor"
+            "1, on-created-empty:[maximize] google-chrome-stable --profile-directory=\"Default\""
+            "2, on-created-empty:[maximize] google-chrome-stable --profile-directory=\"Profile 1\""
+            "3, on-created-empty:[maximize] dbeaver"
+            "4, on-created-empty:[maximize] cursor"
             "special:slack, on-created-empty:[floating] slack"
             "special:dev, on-created-empty:[tile] ~/dev.sh"
           ];
