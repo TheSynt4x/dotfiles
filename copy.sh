@@ -12,3 +12,5 @@ cp -r ~/.config/waybar ~/dotfiles/wayland
 cp -r ~/.config/wofi ~/dotfiles/wayland
 
 cp -r ~/.config/dunst ~/dotfiles/wayland
+
+cp -r ~/.config/swaylock ~/dotfiles/wayland
