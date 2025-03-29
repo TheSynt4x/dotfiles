@@ -10,3 +10,5 @@ rm ~/dotfiles/nixos.tar.gz
 cp -r ~/.config/waybar ~/dotfiles/wayland
 
 cp -r ~/.config/wofi ~/dotfiles/wayland
+
+cp -r ~/.config/dunst ~/dotfiles/wayland
