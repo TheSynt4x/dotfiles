@@ -265,10 +265,10 @@ in
 
           # Workspace rules
           workspace = [
-            "1, on-created-empty:[maximize] google-chrome-stable --profile-directory=\"Default\""
-            "2, on-created-empty:[maximize] google-chrome-stable --profile-directory=\"Profile 1\""
-            "3, on-created-empty:[maximize] dbeaver"
-            "4, on-created-empty:[maximize] cursor"
+            "1, on-created-empty:[tile] google-chrome-stable --profile-directory=\"Default\""
+            "2, on-created-empty:[tile] google-chrome-stable --profile-directory=\"Profile 1\""
+            "3, on-created-empty:[tile] dbeaver"
+            "4, on-created-empty:[tile] cursor"
             "special:slack, on-created-empty:[floating] slack"
             "special:dev, on-created-empty:[tile] ~/dev.sh"
           ];
