@@ -1,38 +1,30 @@
-# Swaylock Configuration - Waybar Mocha Inspired
+ignore-empty-password
 
-# Color Definitions (matching Wofi)
-color = 25252565  # Waybar base (slightly adjusted for swaylock)
-text-color = ffffffff # Waybar text
-inside-color = 00000000 # clear
-ring-color = ffffff15 # Waybar border, but very transparent.
-separator-color = ffffff15 # Waybar border, but very transparent.
-inside-ver-color = 00000000 # clear
-ring-ver-color = ffffff15 # Waybar border, but very transparent.
-inside-wrong-color = 00000000 # clear
-ring-wrong-color = ffffff15 # Waybar border, but very transparent.
-line-color = ffffff15 # Waybar border, but very transparent.
+color=1d1f21
+indicator-idle-visible
+indicator-radius=150
+indicator-thickness=30
 
-# Font and Text Settings
-font = "JetBrainsMono Nerd Font"
-font-size = 14
-grace-text = "Unlocked!"
-ver-text = "Verifying..."
-wrong-text = "Wrong!"
-no-input-text = "Enter Password"
-inside-clear-color = 00000000
+inside-color=1d1f21
+inside-clear-color=1d1f21
+inside-ver-color=1d1f21
+inside-wrong-color=1d1f21
 
-# Indicator Style
-indicator-radius = 50
-indicator-thickness = 7
-inside-color = 293133b3
-ring-color = ffffff26
-inside-ver-color = 293133b3
-ring-ver-color = ffffffcc
-inside-wrong-color = 293133b3
-ring-wrong-color = ffff0000
-separator-color = ffffff26
+key-hl-color=7aa6daaa
+bs-hl-color=d54e53aa
 
-# Background
-# Replace with your preferred background image or color
-background-color = 1d1f21ff #Slightly different than surface0
-#image = /path/to/your/background.png
+separator-color=55555555
+
+line-color=1d1f21
+line-uses-ring
+
+text-color=81a2be
+text-clear-color=b5bd68
+text-caps-lock-color=f0c674
+text-ver-color=81a2be
+text-wrong-color=cc6666
+
+ring-color=81a2be55
+ring-ver-color=81a2be
+ring-clear-color=b5bd6811
+ring-wrong-color=cc6666
