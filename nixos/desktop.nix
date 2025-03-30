@@ -208,7 +208,7 @@ in
               "$mainMod, K, movefocus, u"
               "$mainMod, J, movefocus, d"
 
-              "SUPER, L, exec, swaylock"
+              "SUPER, L, exec, swaylock -i ~/bg.jpg"
 
               "$mainMod, S, togglespecialworkspace, slack"
               "$mainMod, D, togglespecialworkspace, dev"
