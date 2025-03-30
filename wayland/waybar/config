@@ -15,10 +15,10 @@
       "hyprland/window"
     ],
     "modules-right": [
+      "battery",
       "cpu",
       "memory",
       "network",
-      "battery",
       "pulseaudio",
       "hyprland/language",
       "clock",

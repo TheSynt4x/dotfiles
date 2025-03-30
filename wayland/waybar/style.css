@@ -2,7 +2,7 @@
 @define-color base rgba(25, 25, 25, 0.75); /* Slightly darker base for better contrast */
 @define-color surface0 rgba(35, 35, 35, 0.9);
 @define-color surface1 rgba(45, 45, 45, 0.7); /* Darker surface for better differentiation */
-@define-color surface2 rgba(60, 60, 60, 0.3); /* Even darker surface for hover effects */
+@define-color surface2 rgba(60, 60, 60, 0.6); /* Made darker for more visible hover effects */
 @define-color text rgba(230, 230, 230, 1); /* Slightly softer white for text */
 @define-color subtext0 rgba(180, 180, 180, 0.5); /* Adjusted subtext for better readability */
 @define-color overlay0 rgba(255, 255, 255, 0.1);
@@ -110,8 +110,8 @@ window#waybar.top .modules-center {
 }
 
 #workspaces button.focused {
-  background-color: @lavender;
-  box-shadow: inset 0 -3px @sky;
+  background-color: @surface2;
+  box-shadow: inset 0 -3px @rosewater;
 }
 
 #workspaces button.urgent {
@@ -165,7 +165,7 @@ window#waybar.top .modules-center {
 }
 
 #tray > .active {
-  border-bottom: 3px solid @green;
+  border-bottom: 3px solid @rosewater;
 }
 
 #tray > .needs-attention {
@@ -185,7 +185,7 @@ window#waybar.top .modules-center {
   font-family: "JetBrainsMono Nerd Font";
   padding: 0 10px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-  color: @maroon;
+  color: @green;
 }
 
 #pulseaudio:hover {
@@ -200,7 +200,7 @@ window#waybar.top .modules-center {
 #network {
   padding: 0 10px;
   margin: 3px;
-  color: @yellow;
+  color: @green;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -213,7 +213,7 @@ window#waybar.top .modules-center {
 }
 
 #network.good {
-  color: @sky;
+  color: @green;
 }
 
 #network.medium {
@@ -230,7 +230,7 @@ window#waybar.top .modules-center {
 
 /* Battery */
 #battery {
-  padding: 0 10px;
+  padding: 4px;
   margin: 3px;
   color: @green;
 }
@@ -242,6 +242,10 @@ window#waybar.top .modules-center {
 #battery.charging,
 #battery.plugged {
   color: @sapphire;
+}
+
+#battery.warning {
+  color: @yellow;
 }
 
 #battery.critical:not(.charging) {
@@ -264,61 +268,15 @@ window#waybar.top .modules-center {
 #clock {
   padding: 0 10px;
   margin: 3px;
-  color: @sky;
+  color: @text;
 }
 
 #clock:hover {
   background-color: @surface2;
 }
 
-/* Pulseaudio Slider */
-#pulseaudio-slider {
-  margin: 3px;
-  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-#pulseaudio-slider:hover {
-  background: @surface2;
-  border-color: @border;
-}
-
-#pulseaudio-slider slider {
-  min-height: 30px;
-  min-width: 5px;
-  opacity: 1;
-  color: rgba(255, 255, 255, 1);
-  background-color: @sapphire;
-  border: none;
-  box-shadow: none;
-  border-radius: 10px;
-}
-
-#pulseaudio-slider trough {
-  min-height: 10px;
-  min-width: 80px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-#pulseaudio-slider highlight {
-  min-width: 0px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-/* Power-Profiles-Daemon */
-#power-profiles-daemon {
-  margin: 3px;
-  padding: 4px;
-  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-#power-profiles-daemon:hover {
-  background: @surface2;
-}
-
 #window {
-  color: @rosewater;
+  color: @text;
 }
 
 #language {
@@ -331,3 +289,25 @@ window#waybar.top .modules-center {
   padding: 4px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+/* Standardize hover effects across all interactive elements */
+#custom-os_button:hover,
+#workspaces button:hover,
+#taskbar button:hover,
+#tray > widget:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#battery:hover,
+#clock:hover,
+#pulseaudio:hover,
+#power-profiles-daemon:hover,
+#custom-power-menu:hover,
+#language:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Remove individual hover definitions from existing elements */
+/* Note: Keep special hover states like workspaces active/focused */
