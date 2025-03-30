@@ -31,6 +31,17 @@ in
       plugins = [ "git" "docker" ];
     };
     autosuggestions.enable = true;
+    shellInit = ''
+      dsync() {
+        "$HOME/dotfiles/sync.sh" "$@"
+      }
+
+      # Option 2: Alias
+      alias nano='micro'
+      alias dsync="$HOME/dotfiles/sync.sh"
+
+      eval "$(fnm env --use-on-cd --shell zsh)"
+    '';
   };
 
   # System-wide settings
