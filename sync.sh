@@ -87,6 +87,9 @@ case "$1" in
     "apply")
         apply
         ;;
+    "clean")
+        sudo nix-collect-garbage -d
+        sudo nixos-rebuild switch
     *)
         usage
         exit 1
