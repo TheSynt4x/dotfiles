@@ -202,13 +202,13 @@ in
               "$mainMod, R, exec, wofi --show drun"
               ", Print, exec, grimblast copy area"
 
-              # Workspace switching
+              # Window navigation
               "$mainMod, H, movefocus, l"
               "$mainMod, L, movefocus, r"
               "$mainMod, K, movefocus, u"
               "$mainMod, J, movefocus, d"
 
-              "$mainMod, L, exec, swaylock"
+              "SUPER, L, exec, swaylock"
 
               "$mainMod, S, togglespecialworkspace, slack"
               "$mainMod, D, togglespecialworkspace, dev"
