@@ -201,10 +201,31 @@ window#waybar.top .modules-center {
   padding: 0 10px;
   margin: 3px;
   color: @yellow;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #network:hover {
   background-color: @surface2;
+}
+
+#network.excellent {
+  color: @green;
+}
+
+#network.good {
+  color: @sky;
+}
+
+#network.medium {
+  color: @yellow;
+}
+
+#network.low {
+  color: @flamingo;
+}
+
+#network.disconnected {
+  color: @subtext0;
 }
 
 /* Battery */
