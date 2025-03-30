@@ -25,7 +25,7 @@ in
     bibata-cursors
     swaylock
     xdg-desktop-portal-hyprland # Ensure proper integration with applications
-    dunst
+    mako
     wl-clipboard
     micro
     pavucontrol
