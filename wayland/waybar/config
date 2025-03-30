@@ -18,7 +18,13 @@
       "pulseaudio/slider",
       "hyprland/language",
       "clock",
+      "custom/power-menu"
     ],
+    "custom/power-menu": {
+      "format": "⏻",
+      "on-click": "~/.config/waybar/scripts/power-menu.sh",
+      "tooltip": false
+    },
     "hyprland/window": {
       "max-length": 40,
       "rewrite": {

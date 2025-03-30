@@ -304,3 +304,9 @@ window#waybar.top .modules-center {
 	margin: 3px;
 	padding: 4px;
 }
+
+#custom-power-menu {
+  margin: 3px;
+  padding: 4px;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
