@@ -90,6 +90,7 @@ case "$1" in
     "clean")
         sudo nix-collect-garbage -d
         sudo nixos-rebuild switch
+        ;;
     *)
         usage
         exit 1
