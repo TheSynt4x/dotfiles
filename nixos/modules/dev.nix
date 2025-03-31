@@ -11,7 +11,8 @@
       '';
     };
 
-
+  services.passSecretService.enable = true;
+  
   # Allow your user to use Docker without sudo
   users.users.${userConfig.username}.extraGroups = [ "docker" ];
 

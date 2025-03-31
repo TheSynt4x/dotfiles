@@ -1,2 +1,2 @@
-wayland/waybar/config
-wayland/waybar/style.css
+nixos/configuration.nix
+nixos/hardware-configuration.nix

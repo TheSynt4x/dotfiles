@@ -101,7 +101,7 @@ window#waybar.top .modules-center {
 
 #workspaces button:hover {
   background: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -3px @sky;
+  border-bottom: 3px solid @rosewater;
 }
 
 #workspaces button.active {
