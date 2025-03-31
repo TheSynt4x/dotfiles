@@ -7,12 +7,10 @@ WAYLAND_CONFIG_DIR="$HOME/.config"
 
 # Function to display usage information
 usage() {
-    echo "Usage: $0 [backup|pull|apply|symlink|clean]"
+    echo "Usage: $0 [backup|symlink|clean]"
     echo
     echo "Commands:"
-    echo "  backup  - Copy current system configuration to dotfiles directory"
-    echo "  pull    - Pull latest changes from git repository"
-    echo "  apply   - Apply dotfiles configuration to system"
+    echo "  backup  - Copy current system configuration to dotfiles directory (use before initial setup)"
     echo "  symlink - Create symlinks from system to dotfiles directory"
     echo "  clean   - Clean up old generations and rebuild NixOS"
     echo
@@ -44,40 +42,6 @@ backup() {
     echo "Backup completed successfully!"
 }
 
-# Function to pull current system changes into dotfiles
-pull() {
-    echo "Pulling system changes into dotfiles..."
-
-    # Pull NixOS configurations
-    echo "Pulling NixOS configurations..."
-    sudo cp -r "$NIXOS_DIR/"* "$DOTFILES_DIR/nixos/"
-
-    # Pull Wayland configurations
-    echo "Pulling Wayland configurations..."
-    cp -r "$WAYLAND_CONFIG_DIR/"* "$DOTFILES_DIR/wayland/"
-
-    echo "System changes pulled into dotfiles successfully!"
-}
-
-# Function to apply configuration
-apply() {
-    echo "Applying configuration..."
-
-    # Copy Wayland configurations
-    echo "Applying Wayland configurations..."
-    sudo cp -r "$DOTFILES_DIR/wayland/"* "$WAYLAND_CONFIG_DIR/"
-
-    # Copy NixOS configurations
-    echo "Applying NixOS configurations..."
-    sudo cp -r "$DOTFILES_DIR/nixos/"* "$NIXOS_DIR/"
-
-    # Rebuild NixOS
-    echo "Rebuilding NixOS..."
-    sudo nixos-rebuild switch
-
-    echo "Configuration applied successfully!"
-}
-
 # Function to create symlinks
 create_symlinks() {
     echo "Creating symlinks..."
@@ -107,12 +71,6 @@ create_symlinks() {
 case "$1" in
     "backup")
         backup
-        ;;
-    "pull")
-        pull
-        ;;
-    "apply")
-        apply
         ;;
     "symlink")
         create_symlinks
