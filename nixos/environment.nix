@@ -36,7 +36,6 @@ in
         "$HOME/dotfiles/sync.sh" "$@"
       }
 
-      # Option 2: Alias
       alias nano='micro'
       alias dsync="$HOME/dotfiles/sync.sh"
 
