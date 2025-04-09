@@ -196,6 +196,7 @@ in
               "$mainMod, V, togglefloating"
               "$mainMod, R, exec, wofi --show drun"
               ", Print, exec, grimblast copy area"
+              "$mainMod, RETURN, fullscreen"
 
               # Window navigation
               "$mainMod, H, movefocus, l"
