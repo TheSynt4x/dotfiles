@@ -34,6 +34,7 @@
   environment.systemPackages = with pkgs; [
     git
     code-cursor
+    vscode
     docker-compose
     fnm
     dbeaver-bin
