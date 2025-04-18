@@ -1,5 +1,8 @@
 { config, pkgs, userConfig, ... }:
 
+let
+  unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
+in
 {
   # Enable Docker
   virtualisation.docker.enable = true;
@@ -32,10 +35,10 @@
 
   # Install system-wide development tools
   environment.systemPackages = with pkgs; [
-    git
-    code-cursor
-    vscode
+    unstable.code-cursor
     docker-compose
+    git
+    vscode
     fnm
     dbeaver-bin
     lz4
