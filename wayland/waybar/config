@@ -69,6 +69,7 @@
     },
     "network": {
       "format-wifi": "<span font='14px' rise='1500'>{icon}</span>",
+      "format-ethernet": "<span font='14px' rise='1500'>{icon}</span>",
       "format-disconnected": "<span font='14px' rise='1500'>󰌙</span>",
       "format-icons": [
         "󰤯",
