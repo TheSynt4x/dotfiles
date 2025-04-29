@@ -309,5 +309,16 @@ window#waybar.top .modules-center {
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+#power-profiles-daemon {
+  margin: 3px;
+  padding: 4px;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: @text;
+}
+
+#power-profiles-daemon:hover {
+  background-color: @surface2;
+}
+
 /* Remove individual hover definitions from existing elements */
 /* Note: Keep special hover states like workspaces active/focused */

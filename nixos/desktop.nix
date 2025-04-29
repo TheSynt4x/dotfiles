@@ -30,28 +30,8 @@ in
     micro
     pavucontrol
   ];
-  
-  services.tlp = {
-    enable = true;
 
-    settings = {
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "balanced";
-
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
-
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 0;
-
-      RUNTIME_PM_ON_AC = "auto";
-      RUNTIME_PM_ON_BAT = "auto";
-    };
-  };
-
+  services.power-profiles-daemon.enable = true;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
   programs.hyprland.enable = true;
@@ -85,6 +65,7 @@ in
           exec-once = [
             "waybar"
             "swaybg -i ~/bg.jpg -m fill"
+            "udiskie"
           ];
 
           # Input settings

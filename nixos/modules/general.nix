@@ -7,6 +7,7 @@
 		google-chrome
 		vlc
 		ffmpeg
+		udiskie
 	];
 	
 	programs.steam = {

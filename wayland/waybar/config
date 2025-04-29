@@ -16,6 +16,7 @@
     ],
     "modules-right": [
       "battery",
+      "power-profiles-daemon",
       "cpu",
       "memory",
       "network",
@@ -35,6 +36,17 @@
         "": "Babaji"
       },
       "separate-outputs": true
+    },
+    "power-profiles-daemon": {
+      "format": "<span rise='1500'>{icon}</span>",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": " ",
+        "power-saver": " "
+      }
     },
     "hyprland/workspaces": {
       "icon-size": 32,
