@@ -17,6 +17,7 @@
     "modules-right": [
       "battery",
       "power-profiles-daemon",
+      "backlight",
       "cpu",
       "memory",
       "network",
@@ -84,6 +85,7 @@
         "medium": 40,
         "low": 20
       },
+      "on-click": "kitty -e nmtui",
       "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
       "tooltip": true
     },
@@ -155,6 +157,20 @@
         "on-scroll-up": "shift_up",
         "on-scroll-down": "shift_down"
       }
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span font='14px' rise='1500'>{icon} {percent}%</span>",
+      "format-icons": ["󰃞", "󰃟", "󰃠"],
+      "actions": {
+        "on-click-right": "brightnessctl set 100%",
+        "on-click-left": "brightnessctl set 100%-",
+        "on-scroll-up": "brightnessctl set +10%",
+        "on-scroll-down": "brightnessctl set -10%"
+      },
+      "min-length": 6,
+      "tooltip": true,
+      "tooltip-format": "Brightness: {percent}%"
     }
   },
   {

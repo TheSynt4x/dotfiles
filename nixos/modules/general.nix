@@ -1,6 +1,10 @@
 { config, pkgs, ...}:
 
 {
+	imports = [
+		(import ./micro.nix { inherit config pkgs; })
+	];
+
 	environment.systemPackages = with pkgs; [
 		discord
 		slack
@@ -16,7 +20,7 @@
 		dedicatedServer.openFirewall = true;
 	};
 
-	fonts.packages = with pkgs; [
-		nerdfonts
+	fonts.packages = [ 
+		pkgs.nerd-fonts.jetbrains-mono
 	];
 }

@@ -36,9 +36,9 @@ in
   # Install system-wide development tools
   environment.systemPackages = with pkgs; [
     unstable.code-cursor
+    vscode
     docker-compose
     git
-    vscode
     fnm
     dbeaver-bin
     lz4

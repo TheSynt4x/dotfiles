@@ -7,7 +7,7 @@
 }:
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
 in
 {
   imports = [
@@ -27,8 +27,8 @@ in
     xdg-desktop-portal-hyprland # Ensure proper integration with applications
     mako
     wl-clipboard
-    micro
     pavucontrol
+    wdisplays
   ];
 
   services.power-profiles-daemon.enable = true;
