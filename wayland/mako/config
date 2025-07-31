@@ -14,3 +14,7 @@ margin=8
 padding=8
 border-size=2
 border-radius=12
+default-timeout=3333
+actions=1
+icons=1
+markup=1
