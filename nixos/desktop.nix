@@ -65,7 +65,7 @@ in
           exec-once = [
             "waybar"
             "swaybg -i ~/bg.jpg -m fill"
-            "udiskie"
+            "sudo tailscale up"
           ];
 
           # Input settings
@@ -245,7 +245,7 @@ in
           workspace = [
             "1, on-created-empty:[tile] google-chrome-stable --profile-directory=\"Default\""
             "2, on-created-empty:[tile] google-chrome-stable --profile-directory=\"Profile 1\""
-            "3, on-created-empty:[tile] dbeaver"
+            "3, on-created-empty:[tile] mysql-workbench"
             "4, on-created-empty:[tile] cursor"
             "special:slack, on-created-empty:[floating] slack"
             "special:dev, on-created-empty:[tile] ~/dev.sh"

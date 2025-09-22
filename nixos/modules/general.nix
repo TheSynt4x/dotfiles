@@ -5,13 +5,16 @@
 		(import ./micro.nix { inherit config pkgs; })
 	];
 
+	services.cron = {
+		enable = true;
+	};
+
 	environment.systemPackages = with pkgs; [
 		discord
 		slack
 		google-chrome
 		vlc
 		ffmpeg
-		udiskie
 	];
 	
 	programs.steam = {

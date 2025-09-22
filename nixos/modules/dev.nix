@@ -48,6 +48,22 @@ in
     p7zip
     zip
     fastfetch
+    insomnia
+    mysql-workbench
+  ];
+
+  services.tailscale.enable = true;
+
+  security.sudo.extraRules = [
+    {
+      users = [ userConfig.username ];
+      commands = [
+        {
+          command = "${pkgs.tailscale}/bin/tailscale up *";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
   ];
 
   programs.nix-ld.enable = true;
